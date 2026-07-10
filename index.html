@@ -1,244 +1,211 @@
-<!DOCTYPE html> 
-<html lang="en">
-    <link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dalian Analysis and Differential Equation</title>
- 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Group - Dalian Analysis and Differential Equation</title>
 
-body{
-    font-family:Arial, sans-serif;
-    background:#f5f7fa;
-    color:#333;
-}
+    <!-- ===== 样式表 ===== -->
+    <style>
+        /* ----- 全局重置 & 基础样式 ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-header{
-    background:#003366;
-    color:white;
-    text-align:center;
-    padding:80px 20px;
-}
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+            color: #1a1a2e;
+        }
 
-header h1{
-    font-size:64px;
-    font-weight:bold;
-    letter-spacing:1px;
-    margin-bottom:15px;
-}
-    
-header .university{
-    font-size:28px;
-    font-weight:400;
-    margin-bottom:12px;
-}
+        /* ----- 主容器 ----- */
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 40px 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
 
-header .subtitle{
-    font-size:20px;
-    color:#d9e6f2;
-}
+        /* ----- 标题样式 ----- */
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
 
-header p{
-    margin-top:15px;
-    font-size:20px;
-}
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 14px;
+            padding-bottom: 6px;
+            border-bottom: 3px solid #2c6fbb;
+        }
 
-section{
-    width:80%;
-    margin:50px auto;
-}
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 12px;
+        }
 
-h2{
-    color:#003366;
-    margin-bottom:20px;
-}
+        /* ----- 区块间距 ----- */
+        section {
+            margin-bottom: 40px;
+        }
 
-.card{
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 0 15px rgba(0,0,0,.08);
-}
+        section:last-of-type {
+            margin-bottom: 0;
+        }
 
-footer{
-    margin-top:80px;
-    background:#003366;
-    color:white;
-    text-align:center;
-    padding:25px;
-}
-</style>
+        /* ----- 卡片样式（白框） ----- */
+        .card {
+            background-color: #ffffff;
+            padding: 20px 26px;
+            border-radius: 10px;
+            border: 1px solid #e8ecf1;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.2s ease;
+        }
 
+        .card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .card p {
+            margin-bottom: 6px;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ----- 列表样式 ----- */
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .card ul li {
+            padding: 6px 0 6px 28px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%232c6fbb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
+            background-size: 18px;
+            border-bottom: 1px solid #f0f2f5;
+        }
+
+        .card ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* ----- 邮箱高亮 ----- */
+        .email {
+            color: #2c6fbb;
+            font-weight: 500;
+        }
+
+        /* ----- 页脚 ----- */
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e8ecf1;
+            text-align: center;
+            font-size: 14px;
+            color: #8a8fa3;
+        }
+
+        /* ----- 响应式（手机适配） ----- */
+        @media (max-width: 600px) {
+            .container {
+                padding: 24px 18px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            h2 {
+                font-size: 19px;
+            }
+
+            .card {
+                padding: 16px 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
+    <div class="container">
 
-<h1>Dalian Analysis and Differential Equation</h1>
-<p class="university">
-    Dalian University of Technology<br>
-    Dalian, China
-</p>
+        <!-- ============================================================ -->
+        <!-- 页眉 -->
+        <!-- ============================================================ -->
+        <header>
+            <h1>Dalian Analysis and Differential Equation</h1>
+            <p style="color: #5a6a7e; margin-bottom: 30px;">Research Group · Dalian University of Technology</p>
+        </header>
 
-<p class="subtitle">
-    Faculty Members · Junior Researchers · Research Activities · Open Job Position
-</p>
+        <!-- ============================================================ -->
+        <!-- 研究活动 -->
+        <!-- ============================================================ -->
+        <section>
+            <h2>Research Activities</h2>
+            <div class="card">
+                <p>
+                    We welcome motivated students and researchers
+                    who are interested in mathematical analysis
+                    and differential equations.
+                </p>
+            </div>
+        </section>
 
-</header>
+        <!-- ============================================================ -->
+        <!-- 开放职位 -->
+        <!-- ============================================================ -->
+        <section>
+            <h2>Open Job Positions</h2>
+            <div class="card">
+                <ul>
+                    <li>PhD Students</li>
+                    <li>Master Students</li>
+                    <li>Research Assistants</li>
+                    <li>Visiting Scholars</li>
+                </ul>
+            </div>
+        </section>
 
-<section>
+        <!-- ============================================================ -->
+        <!-- 如何申请 -->
+        <!-- ============================================================ -->
+        <section>
+            <h3>How to Apply</h3>
+            <div class="card">
+                <p>Interested applicants are encouraged to contact the research group.</p>
+                <p>
+                    Email: <span class="email">example@dlut.edu.cn</span>
+                </p>
+            </div>
+        </section>
 
-<h2>About</h2>
+        <!-- ============================================================ -->
+        <!-- 页脚 -->
+        <!-- ============================================================ -->
+        <footer>
+            &copy; 2026 Dalian Analysis and Differential Equation
+        </footer>
 
-<div class="card">
+    </div>
+    <!-- /container -->
 
-<p>
-Welcome to the official homepage of the Dalian Analysis and Differential Equation Group at Dalian University of Technology.
-
-Our research focuses on analysis, differential equations, nonlinear partial differential equations, dynamical systems, and related mathematical theories and applications.
-
-This website provides information about our research, publications, members, and academic activities.
-</p>
-
-</div>
-
-</section>
-<section>
-
-<h2>Faculty Members</h2>
-
-<div class="faculty-container">
-
-
-<div class="card">
-
-
-</section>
-
-<section>
-
-<h2>Junior Researches</h2>
-
-
-<div class="card">
-
-<h3>Postdoc.</h3>
-    
-<h3>PhD Students</h3>
-
-<ul>
-<li>
-Student Name 1
-<br>
-Research Interests: Differential Equations
-</li>
-
-<br>
-
-<li>
-Student Name 2
-<br>
-Research Interests: Mathematical Analysis
-</li>
-
-</ul>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>Master Students</h3>
-
-<ul>
-
-<li>
-Student Name 3
-</li>
-
-<br>
-
-<li>
-Student Name 4
-</li>
-
-</ul>
-</div>
-    
-<div class="card">
-
-</section>
-    
-<section>
-
-<h2>Research Activities</h2>
-
-
-<div class="card">
-
-<p>
-We welcome motivated students and researchers
-who are interested in mathematical analysis
-and differential equations.
-</p>
-
-</div>
-</section>
-
-<section>
-<h2>Open Job Positions</h2>
-
-<ul>
-
-<li>
-PhD Students
-</li>
-
-<li>
-Master Students
-</li>
-
-<li>
-Research Assistants
-</li>
-
-<li>
-Visiting Scholars
-</li>
-
-</ul>
-</section>
-
-<h3>How to Apply</h3>
-
-<p>
-Interested applicants are encouraged to contact
-the research group.
-</p>
-
-
-<p>
-Email:
-...@dlut.edu.cn
-</p>
-
-
-</div>
-</section>
-    
-<footer>
-
-© 2026 Dalian Analysis and Differential Equation
-
-</footer>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
