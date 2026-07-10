@@ -206,7 +206,7 @@
             
                 line-height:1.15;
             
-                max-weight:700px;
+                font-weight:700;
             
             }
             
@@ -337,199 +337,310 @@
    Community section
    =============================== */
 
-
-       .community {
-                  
-                      padding:100px 0;
-                  
-                      background:white;
-                  
-                  }
-                  
-                  
-   .community .section-label {
-                  
-                      color:#ffcc00;
-                  
-                      font-size:24px;
-                  
-                      margin-bottom:30px;
-                  
-                  }
-                  
-                  
-      .community h2 {
-                  
-                      font-size:55px;
-                  
-                      line-height:1.1;
-                  
-                      color:#003366;
-                  
-                      max-width:600px;
-                  
-                  }
-                  
-                  
-       .community-intro {
-                  
-                      margin-top:25px;
-                  
-                      font-size:22px;
-                  
-                      max-width:900px;
-                  
-                      line-height:1.6;
-                  
-                  }
-                  
-                  
-                  
-       .community-grid {
-                  
-                      display:flex;
-                  
-                      gap:40px;
-                  
-                      margin-top:70px;
-                  
-                  }
-                  
-                  
-                  
-      .community-card {
-                  
-                  
-                      flex:1;
-                  
-                      background:#f5f7fa;
-                  
-                      padding:40px;
-                  
-                      border-radius:20px;
-                  
-                  }
-                  
-                  
-                  
-      .community-card h3 {
-                  
-                      color:#003366;
-                  
-                      font-size:30px;
-                  
-                      margin-bottom:25px;
-                  
-                  }
-                  
-                  
-                  
-       .community-card ul {
-                  
-                      list-style:none;
-                  
-                  }
-                  
-                  
-                  
-      .community-card li {
-                  
-                      font-size:20px;
-                  
-                      margin:15px 0;
-                  
-                  }
+               
+   .community-grid{
+               
+                   display:grid;
+               
+                   grid-template-columns:repeat(2,1fr);
+               
+                   gap:40px;
+               
+                   margin-top:60px;
+               
+               }
+               
+               
+   .community-card{
+               
+                   display:flex;
+               
+                   flex-direction:column;
+               
+                   justify-content:space-between;
+               
+                   min-height:360px;
+               
+                   padding:40px;
+               
+                   background:#f7f9fc;
+               
+                   border-radius:24px;
+               
+                   color:#222;
+               
+                   transition:0.3s;
+               
+               }
+               
+               
+   .community-card:hover{
+               
+                   transform:translateY(-8px);
+               
+               }
+               
+               
+   .community-index{
+               
+                   font-size:18px;
+               
+                   color:#ffcc00;
+               
+               }
+               
+               
+   .community-icon svg{
+               
+                   width:45px;
+               
+                   height:45px;
+               
+                   stroke:#003366;
+               
+                   fill:none;
+               
+                   stroke-width:2;
+               
+               }
+               
+               
+      .card-kicker{
+               
+                   color:#777;
+               
+                   font-size:18px;
+               
+                   margin-top:25px;
+               
+               }
+               
+               
+   .community-card h3{
+               
+                   font-size:36px;
+               
+                   color:#003366;
+               
+                   margin:10px 0 25px;
+               
+               }
+               
+               
+   .community-card ul{
+               
+                   list-style:none;
+               
+               }
+               
+               
+   .community-card li{
+               
+                   font-size:20px;
+               
+                   margin:12px 0;
+               
+                   display:flex;
+               
+                   justify-content:space-between;
+               
+               }
+               
+               
+   .community-card li span{
+               
+                   font-weight:bold;
+               
+                   color:#003366;
+               
+               }
+               
+               
+   .round-arrow{
+               
+                   font-size:30px;
+               
+                   color:#003366;
+               
+               }
 /* ===============================
    People section
    =============================== */
 
 
-          .people {
-                  
-                      padding:100px 0;
-                  
-                      background:#f8fafc;
-                  
-                  }
-                  
-                  
-                  
-         .people h2 {
-                  
-                      font-size:55px;
-                  
-                      color:#003366;
-                  
-                  }
-                  
-                  
-                  
-         .people-intro {
-                  
-                      font-size:22px;
-                  
-                      margin:20px 0 50px;
-                  
-                  }
-                  
-                  
-                  
-         .people-grid {
-                  
-                  
-                      display:grid;
-                  
-                      grid-template-columns:repeat(3,1fr);
-                  
-                      gap:30px;
-                  
-                  }
-                  
-                  
-                  
-         .person-card {
-                  
-                  
-                      background:white;
-                  
-                      padding:30px;
-                  
-                      border-radius:18px;
-                  
-                      border:1px solid #ddd;
-                  
-                  
-                  }
-                  
-                  
-                  
-         .person-card h3 {
-                  
-                  
-                      color:#003366;
-                  
-                      font-size:26px;
-                  
-                  
-                  }
-                  
-                  
-                  
-       .person-role {
-                  
-                  
-                      color:#777;
-                  
-                      margin:10px 0;
-                  
-                  
-                  }
-                  
-                  
-                  
-      .person-topic {
-                  
-                  
-                      line-height:1.6;
-                  
-                  }
+   .section-heading{
+               
+                   display:flex;
+               
+                   justify-content:space-between;
+               
+                   align-items:flex-end;
+               
+                   margin-bottom:50px;
+               
+               }
+               
+               
+   .section-heading h2{
+               
+                   font-size:55px;
+               
+                   line-height:1.1;
+               
+                   color:#003366;
+               
+               }
+               
+               
+               
+   .section-heading p{
+               
+                   max-width:450px;
+               
+                   font-size:20px;
+               
+                   line-height:1.5;
+               
+               }
+               
+               
+     .filter-bar{
+               
+                   display:flex;
+               
+                   gap:12px;
+               
+                   flex-wrap:wrap;
+               
+                   margin-bottom:60px;
+               
+               }
+               
+               
+   .filter-button{
+               
+                   border:1px solid #003366;
+               
+                   background:white;
+               
+                   padding:10px 18px;
+               
+                   border-radius:30px;
+               
+                   color:#003366;
+               
+               }
+               
+               
+   .filter-button.active{
+               
+                   background:#003366;
+               
+                   color:white;
+               
+               }
+   .people-grid{
+               
+                   display:grid;
+               
+                   grid-template-columns:repeat(3,1fr);
+               
+                   gap:30px;
+               
+               }
+               
+               
+               
+   .person-card{
+               
+                   background:white;
+               
+                   border-radius:20px;
+               
+                   padding:30px;
+               
+                   border:1px solid #e5e5e5;
+               
+               }
+               
+               
+               
+      .portrait{
+               
+                   width:90px;
+               
+                   height:90px;
+               
+                   border-radius:50%;
+               
+                   display:flex;
+               
+                   align-items:center;
+               
+                   justify-content:center;
+               
+                   background:#003366;
+               
+                   color:white;
+               
+                   font-size:28px;
+               
+                   font-weight:bold;
+               
+                   margin-bottom:25px;
+               
+               }
+               
+               
+               
+   .person-role{
+               
+                   color:#777;
+               
+                   font-size:16px;
+               
+               }
+               
+               
+   .person-info h5{
+               
+                   font-size:26px;
+               
+                   color:#003366;
+               
+                   margin:8px 0;
+               
+               }
+               
+               
+   .person-info p{
+               
+                   line-height:1.6;
+               
+               }
+               
+               
+               
+   .person-links{
+               
+                   margin-top:20px;
+               
+                   display:flex;
+               
+                   gap:20px;
+               
+               }
+               
+               
+   .person-links a{
+               
+                   color:#003366;
+               
+                   font-weight:bold;
+               
+               }
+   .eyebrow.dark{
+               
+                   color:#003366;
+               
+               }
